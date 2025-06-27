@@ -23,8 +23,8 @@
 #### Backend (FastAPI)
 
 1. Clone the repository:
-   git clone https://github.com/SantiagoPozo/arrow5.git
-   cd arrow5
+   git clone https://github.com/SantiagoPozo/arrow-code.git
+   cd arrow-code
 2. Create and activate a virtual environment:
    python3 -m venv env
    source env/bin/activate # For macOS/Linux
