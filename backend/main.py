@@ -8,8 +8,7 @@ from random import sample
 from constants import *
 import asyncio
 
-# Constant for inactivity duration in hours.
-INACTIVITY_HOURS = 24
+
 
 origins = [
     "http://localhost:5173",

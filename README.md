@@ -64,7 +64,45 @@ npm run dev
 
 ## Deployment
 
-(Currently for local development; deployment instructions will be defined as the project evolves.)
+### Backend (Render)
+
+1. Push your `deploy` branch to GitHub:
+   ```bash
+   git push origin deploy
+   ```
+2. In Render dashboard, click **New** → **Web Service**, connect your GitHub repo and select the `deploy` branch.
+3. Set:
+   - **Build Command:** `pip install -r backend/requirements.txt`
+   - **Start Command:** `uvicorn backend.main:app --host 0.0.0.0 --port 10000`
+4. Add any required environment variables (e.g. `INACTIVITY_HOURS`).
+5. Deploy and note the service URL.
+
+### Frontend (GitHub Pages)
+
+1. Switch to `deploy` branch and install `gh-pages`:
+   ```bash
+   cd frontend
+   npm install --save-dev gh-pages
+   ```
+2. Add to `package.json`:
+   ```json
+   "homepage": "https://<your-username>.github.io/arrow-code",
+   "scripts": {
+     "predeploy": "npm run build",
+     "deploy": "gh-pages -d dist"
+   }
+   ```
+3. Commit and push `deploy` branch:
+   ```bash
+   git add package.json
+   git commit -m "Add GitHub Pages deploy configuration"
+   git push origin deploy
+   ```
+4. Run deployment:
+   ```bash
+   npm run deploy
+   ```
+5. In GitHub repo settings, enable Pages from the `gh-pages` branch (root).
 
 ## License
 
