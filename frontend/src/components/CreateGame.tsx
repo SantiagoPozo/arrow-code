@@ -83,8 +83,8 @@ const CreateGame: React.FC<CreateGameProps> = ({
         />
         <input
           type="text"
-          id="playerName"
-          name="playerName"
+          id="player-name"
+          name="player-name"
           value={playerName}
           onChange={(e) => setPlayerName(e.target.value)}
           placeholder="Enter your name"

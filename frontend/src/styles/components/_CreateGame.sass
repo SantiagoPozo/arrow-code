@@ -30,48 +30,48 @@
       font-size: 1em
       padding: 0.5em
       border-radius: 8px
-      // border: 1px solid #aaa
       text-align: center
     &:focus
         cursor: pointer
-  
+  form #player-name
+    :root[data-theme='dark'] &
+      background: $color-dark
+      color: $color-light
+      border: 2px solid $color-light
   form button[type="submit"]
-    transition: background 0.3s, color 0.3s
+    transition: background 0.3s, color 0.3s, border 0.3s, filter 0.3s
+    &:hover
+      :root[data-theme='light'] &
+        filter: brightness(1.2)
+      :root[data-theme='dark'] &
+        filter: brightness(1.4)
+    :root[data-theme='light'] &
+      background: white
+    :root[data-theme='dark'] &
+      background: $color-dark
     &.they
-      color: $color-blue
-      border: 2px solid $color-blue
-      &:hover
-        background: $color-blue-light
-      @media (prefers-color-scheme: dark)
-        background: $color-blue
-        color: white
-        border-color: white
-      &:hover
-        filter: brightness(1.2)
+      :root[data-theme='light'] &
+        color: $color-blue
+        border: 2px solid $color-blue
+      :root[data-theme='dark'] &
+        color: $color-blue-light
+        border-color: $color-blue-light
     &.she
-      color: $color-green
-      border: 2px solid $color-green
-      &:hover
-        background: $color-green-light
-      @media (prefers-color-scheme: dark)
-        background: $color-green
-        color: white
-        border-color: white
-      &:hover
-        filter: brightness(1.2)
+      :root[data-theme='light'] &
+        color: $color-green
+        border: 2px solid $color-green
+      :root[data-theme='dark'] &
+        color: $color-green-light
+        border: 2px solid $color-green-light
     &.he
-      color: $color-red
+      color: $color-red-light
       border: 2px solid $color-red
-      &:hover
-       background: $color-red-light
-      @media (prefers-color-scheme: dark)
-        background: $color-red
-        color: white
-        border-color: white
-      &:hover
-        filter: brightness(1.2)
-
-
+      :root[data-theme='light'] &
+        color: $color-red
+        border: 2px solid $color-red
+      :root[data-theme='dark'] &
+        color: $color-red-light
+        border: 2px solid $color-red-light
 #difficulty-wrapper
   margin: 1em 0
   border-radius: 8px

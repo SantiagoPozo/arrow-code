@@ -53,11 +53,13 @@ header
   transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out
   & img
     height: 50px
+    :root[data-theme='dark'] &
+      height: 40px
   :root[data-theme='dark'] & 
     background-color: $color-light
-    border-radius: 5px
     transform: rotate(-8deg)
     will-change: transform
+    border: 5px solid white
     &:hover
       transform: rotate(0deg)
 
